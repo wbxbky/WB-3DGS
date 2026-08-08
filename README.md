@@ -1,4 +1,4 @@
-# WB-3DGS: Wind-Aware Banana 3D Gaussian Splatting
+# WB-3DGS: Deformable 3D Gaussian Splatting for Reconstruction and Phenotyping in Wind-Blown Banana Orchards
 
 Reproducibility release scaffold accompanying the manuscript **WB-3DGS**. The
 repository mirrors the experimental protocol in the current manuscript:
