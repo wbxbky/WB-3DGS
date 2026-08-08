@@ -240,7 +240,6 @@ Each reported experiment has a dedicated YAML under `configs/experiments/`:
 
 - Bootstrap seed: **42** (paper-reported).
 - Neural-optimization seed: **recover from the original training log before release**;
-  the manuscript does not state that the training seed was 42.
 - Bootstrap: sequence-cluster percentile bootstrap, **10,000** resamples for
   rendering/statistical comparisons, seed 42.
 - Leaf-area coefficient CI: plant-cluster bootstrap, **2,000** resamples.
@@ -262,9 +261,7 @@ Each reported experiment has a dedicated YAML under `configs/experiments/`:
 
 ## Checkpoints
 
-Do not commit large checkpoints directly. Put a minimal reproducibility
-checkpoint in a GitHub Release or Git LFS, record SHA256, config, source commit,
-training sequence/plant, iteration, and license in `checkpoints/README.md`.
+
 
 ## Citation
 
