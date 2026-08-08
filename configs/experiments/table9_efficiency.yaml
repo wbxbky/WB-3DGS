@@ -1,0 +1,11 @@
+experiment: table9_efficiency
+base_config: ../paper_defaults.yaml
+gpu: NVIDIA_RTX_3090_24GB
+methods: [3DGS, Deformable-GS, 4DGS, WB-3DGS]
+metrics: [training_min_per_plant, inference_fps_1080p, peak_vram_gb]
+reported:
+  3DGS: {training_min_per_plant: 16.5, inference_fps_1080p: 115, peak_vram_gb: 7.2}
+  Deformable-GS: {training_min_per_plant: 45.2, inference_fps_1080p: 62, peak_vram_gb: 13.5}
+  4DGS: {training_min_per_plant: 41.5, inference_fps_1080p: 78, peak_vram_gb: 11.8}
+  WB-3DGS: {training_min_per_plant: 52.4, inference_fps_1080p: 85, peak_vram_gb: 15.2}
+

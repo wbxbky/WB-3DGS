@@ -1,0 +1,32 @@
+convention: "p_A = T_AB @ p_B; homogeneous 4x4 matrices; right-handed frames"
+frames:
+  W: "world; origin at first body frame; z aligned to IMU-initialized gravity"
+  B: "body; midpoint of rear axle"
+  L: "RoboSense RS-32 LiDAR"
+  C: "Insta360 X5 / derived virtual pinhole camera"
+  I: "Handsfree HFI-A9 IMU"
+
+# T_LI transforms IMU-frame coordinates into the LiDAR frame.
+T_LI: REQUIRED_FROM_AUTHORS
+
+# T_LC transforms camera-frame coordinates into the LiDAR frame.
+T_LC: REQUIRED_FROM_AUTHORS
+
+# T_BL = inverse(T_LB), according to the manuscript transformation chain.
+T_BL: REQUIRED_FROM_AUTHORS
+
+chain:
+  T_WC: "T_WB(t) @ T_BL @ T_LC"
+
+virtual_camera:
+  projection: pinhole
+  width: 1536
+  height: 1536
+  horizontal_fov_deg: 90.0
+  azimuth_deg: [0, 60, 120, 180, 240, 300]
+  K_virtual: "computed analytically from width/height/HFOV; do not hand-fit"
+
+calibration_validation:
+  projection_resolution: [1536, 1536]
+  reported_mean_edge_alignment_px: "<3"
+

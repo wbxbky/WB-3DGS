@@ -1,0 +1,13 @@
+experiment: table6_nested_module_combinations
+base_config: ../paper_defaults.yaml
+modules: {LA: lidar_anchor, HM: hierarchical_motion, SC: semantic_constraint, PC: physics_constraint}
+path:
+  - {name: Base, enabled: []}
+  - {name: Base+LA, enabled: [LA]}
+  - {name: Base+LA+HM, enabled: [LA, HM]}
+  - {name: Base+LA+HM+SC, enabled: [LA, HM, SC]}
+  - {name: Full, enabled: [LA, HM, SC, PC]}
+rendering_eval: {wind_regime: L3, sequences: 6, metrics: [PSNR, LPIPS, RAFT_warping_error]}
+geometry_eval: {wind_regime: L1, sequences: 6, metrics: [symmetric_chamfer_cm]}
+interpretation: conditional_incremental_gains_not_full_factorial_interactions
+

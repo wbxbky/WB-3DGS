@@ -1,0 +1,13 @@
+experiment: table2_lidar_referenced_geometry
+base_config: ../paper_defaults.yaml
+wind_regime: L1
+sequences: 6
+plants_per_sequence: 20
+reference: fused_lidar_overlapping_reconstruction_constraints
+methods: [COLMAP, 3DGS, Deformable-GS, 4DGS, WB-3DGS]
+roi_m: [3, 3, 3]
+evaluation_voxel_m: 0.05
+metrics: [symmetric_chamfer_cm, depth_mae_cm, completeness_at_5cm_percent]
+posthoc_registration: false
+interpretation: lidar_constrained_consistency_not_independent_absolute_accuracy
+

@@ -1,0 +1,14 @@
+experiment: supplementary_s5_dbscan_sensitivity
+base_config: ../paper_defaults.yaml
+population: {target_leaves: 1080}
+before_manual_correction: true
+selected: {eps_m: 0.08, min_samples: 20}
+configurations:
+  - {eps_m: 0.05, min_samples: 20}
+  - {eps_m: 0.08, min_samples: 10}
+  - {eps_m: 0.08, min_samples: 20}
+  - {eps_m: 0.08, min_samples: 40}
+  - {eps_m: 0.12, min_samples: 20}
+metrics: [merged_target_leaves, fragmented_target_leaves, valid_assignment_percent, leaf_area_rmse_m2]
+count_definition: affected_target_leaves_not_cluster_events
+

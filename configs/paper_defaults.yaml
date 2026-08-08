@@ -1,0 +1,118 @@
+project: WB-3DGS
+statistics_seed: 42
+
+data:
+  sequences: 18
+  plants_per_sequence: 20
+  plants_total: 360
+  leaves_per_plant: 3
+  leaves_total: 1080
+  roi_m: [3.0, 3.0, 3.0]
+  wind_regimes:
+    L1: {min_mps: 0.0, max_mps_exclusive: 1.0}
+    L2: {min_mps: 1.0, max_mps_exclusive: 2.0}
+    L3: {min_mps: 2.0, max_mps_inclusive: 3.0}
+
+virtual_camera:
+  source_resolution: [7680, 3840]
+  output_resolution: [1536, 1536]
+  horizontal_fov_deg: 90
+  azimuth_deg: [0, 60, 120, 180, 240, 300]
+
+keyframes:
+  translation_threshold_m: 0.20
+  rotation_threshold_deg: 5.0
+  blur_threshold: 100.0
+  replacement_window_frames: 2
+
+split:
+  contiguous_blocks: 8
+  eligible_heldout_blocks_1indexed: [3, 4, 5, 6]
+  heldout_rule: "3 + ((plant_global_index_1based - 1) mod 4)"
+  temporal_guard_before: 2
+  temporal_guard_after: 2
+  pose_guard_distance_m: 0.40
+  pose_guard_angle_deg: 10.0
+
+semantic:
+  classes: [background, pseudostem, leaf]
+  rigidity_weight: {background: 0.0, pseudostem: 1.0, leaf: 0.3}
+  softmax_temperature: 0.1
+  sam_checkpoint: REQUIRED_FROM_AUTHORS
+  xmem_checkpoint: REQUIRED_FROM_AUTHORS
+  morphology: REQUIRED_FROM_AUTHORS
+
+anchors:
+  voxel_m: 0.05
+  knn: 12
+  visibility_depth_residual_m: 0.10
+  min_visible_views: 3
+  gaussian_min_scale_m: 0.01
+  initial_opacity: 0.1
+
+instances:
+  dbscan_eps_m: 0.08
+  dbscan_min_samples: 20
+  manual_audit_before_traits: true
+
+deformation:
+  max_residual_displacement_m: 0.05
+  petiole_root_radius_m: 0.10
+  instance_mlp: REQUIRED_FROM_AUTHORS
+  hashgrid: REQUIRED_FROM_AUTHORS
+  residual_decoder: REQUIRED_FROM_AUTHORS
+
+loss:
+  lambda_ssim: REQUIRED_FROM_AUTHORS
+  lambda_sem: REQUIRED_FROM_AUTHORS
+  lambda_rigid: REQUIRED_FROM_AUTHORS
+  lambda_root: REQUIRED_FROM_AUTHORS
+  lambda_smooth: REQUIRED_FROM_AUTHORS
+  lambda_geo: REQUIRED_FROM_AUTHORS
+  lambda_reg: REQUIRED_FROM_AUTHORS
+
+training:
+  seed: REQUIRED_FROM_AUTHORS
+  optimizer: Adam
+  iterations: 30000
+  checkpoint_iteration: 30000
+  stages:
+    - {name: static_warmup, start: 0, end: 3000}
+    - {name: kinematic_fitting, start: 3000, end: 10000}
+    - {name: residual_refinement, start: 10000, end: 25000}
+    - {name: joint_finetuning, start: 25000, end: 30000}
+  learning_rates:
+    gaussian_position_initial: 1.6e-4
+    instance_mlp: 5.0e-4
+    hash_feature_grid: 1.0e-4
+  adam_betas: REQUIRED_FROM_AUTHORS
+  adam_eps: REQUIRED_FROM_AUTHORS
+  densification: REQUIRED_FROM_AUTHORS
+
+evaluation:
+  geometry_voxel_m: 0.05
+  geometry_threshold_cm: 5.0
+  posthoc_registration: false
+  bootstrap_resamples: 10000
+  bootstrap_seed: 42
+  raft_checkpoint: raft-things.pth
+  raft_updates: 24
+  raft_mixed_precision: true
+  raft_fb_threshold_px: 1.0
+
+phenotype:
+  visibility_count_gt: 3
+  stem_diameter_height_m: 0.10
+  stem_slice_thickness_m: 0.05
+  leaf_segments: 10
+  leaf_grid_resolution_m: 0.002
+  leaf_area_calibration_k: 0.825
+  leaf_area_bootstrap_resamples: 2000
+
+hardware:
+  cpu: Intel Core i9-10900K
+  gpu: NVIDIA RTX 3090
+  gpu_vram_gb: 24
+  wb3dgs_training_min_per_plant: 52.4
+  wb3dgs_inference_fps_1080p: 85
+  wb3dgs_peak_vram_gb: 15.2

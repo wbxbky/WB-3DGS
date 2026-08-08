@@ -1,0 +1,8 @@
+fold,validation_sequences,outer_evaluation_sequences,development_sequences
+1,"Seq-04;Seq-11;Seq-18","Seq-01;Seq-08;Seq-15","Seq-02;Seq-03;Seq-05;Seq-06;Seq-07;Seq-09;Seq-10;Seq-12;Seq-13;Seq-14;Seq-16;Seq-17"
+2,"Seq-03;Seq-07;Seq-14","Seq-04;Seq-11;Seq-18","Seq-01;Seq-02;Seq-05;Seq-06;Seq-08;Seq-09;Seq-10;Seq-12;Seq-13;Seq-15;Seq-16;Seq-17"
+3,"Seq-06;Seq-10;Seq-17","Seq-03;Seq-07;Seq-14","Seq-01;Seq-02;Seq-04;Seq-05;Seq-08;Seq-09;Seq-11;Seq-12;Seq-13;Seq-15;Seq-16;Seq-18"
+4,"Seq-02;Seq-09;Seq-13","Seq-06;Seq-10;Seq-17","Seq-01;Seq-03;Seq-04;Seq-05;Seq-07;Seq-08;Seq-11;Seq-12;Seq-14;Seq-15;Seq-16;Seq-18"
+5,"Seq-05;Seq-12;Seq-16","Seq-02;Seq-09;Seq-13","Seq-01;Seq-03;Seq-04;Seq-06;Seq-07;Seq-08;Seq-10;Seq-11;Seq-14;Seq-15;Seq-17;Seq-18"
+6,"Seq-01;Seq-08;Seq-15","Seq-05;Seq-12;Seq-16","Seq-02;Seq-03;Seq-04;Seq-06;Seq-07;Seq-09;Seq-10;Seq-11;Seq-13;Seq-14;Seq-17;Seq-18"
+

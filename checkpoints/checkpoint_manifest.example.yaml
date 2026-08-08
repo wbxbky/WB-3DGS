@@ -1,0 +1,14 @@
+checkpoint_file: wb3dgs_seq14_plant18_iter30000.pth
+iteration: 30000
+sequence_id: Seq-14
+plant_id: Plant-18
+source_commit: REQUIRED_FROM_AUTHORS
+config_sha256: REQUIRED_FROM_AUTHORS
+split_manifest_sha256: REQUIRED_FROM_AUTHORS
+checkpoint_sha256: REQUIRED_FROM_AUTHORS
+training_seed: REQUIRED_FROM_AUTHORS
+external_weights:
+  raft_things_sha256: REQUIRED_FROM_AUTHORS
+  sam_checkpoint_and_sha256: REQUIRED_FROM_AUTHORS
+  xmem_checkpoint_and_sha256: REQUIRED_FROM_AUTHORS
+

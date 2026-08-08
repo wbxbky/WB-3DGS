@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the WB-3DGS manuscript."
+title: "WB-3DGS reproducibility code"
+type: software
+version: 0.1.0
+authors:
+  - family-names: "REQUIRED_FROM_AUTHORS"
+    given-names: "REQUIRED_FROM_AUTHORS"
+repository-code: "https://github.com/REQUIRED_FROM_AUTHORS/WB-3DGS"
+

@@ -1,0 +1,14 @@
+experiment: supplementary_s9_semantic_pseudolabels
+base_config: ../paper_defaults.yaml
+reference_views: 90
+views_per_sequence: 5
+sequences: 18
+methods: [SAM_only, SAM_plus_XMem_propagation]
+classes: [pseudostem, leaf, background]
+metrics: [class_IoU, mIoU, macro_Dice, DAVIS_boundary_F1, RAFT_mask_temporal_consistency, propagation_failure]
+strata: [wind_regime, occlusion, illumination]
+failure_definition: "mIoU < 0.75 OR complete loss of either foreground class"
+no_manual_correction_before_scoring: true
+no_confidence_gate: true
+no_occlusion_detector: true
+no_failure_triggered_sam_reinitialization: true

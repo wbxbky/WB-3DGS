@@ -1,0 +1,12 @@
+# Release-candidate dependency set. See RELEASE_AUDIT.md before publication.
+numpy==1.26.4
+scipy==1.11.4
+scikit-learn==1.3.2
+pandas==2.1.4
+PyYAML==6.0.1
+opencv-python==4.8.1.78
+Pillow==10.2.0
+scikit-image==0.22.0
+lpips==0.1.4
+plyfile==1.0.3
+

@@ -1,0 +1,18 @@
+experiment: table1_rendering_comparison
+base_config: ../paper_defaults.yaml
+methods: [3DGS, K-Planes, Deformable-GS, Spacetime-Gaussians, Dynamic-3D-Gaussians, 4DGS, WB-3DGS]
+wind_regimes: [L1, L2, L3]
+evaluation_subset: heldout
+metrics: [PSNR, SSIM, LPIPS]
+aggregation: view_to_plant_to_sequence
+independent_unit: sequence
+training_iterations:
+  3DGS: 30000
+  K-Planes: 30000
+  Deformable-GS: 40000
+  Spacetime-Gaussians: 30000
+  Dynamic-3D-Gaussians: 30000
+  4DGS: 30000
+  WB-3DGS: 30000
+common_pose_prior: LIO
+

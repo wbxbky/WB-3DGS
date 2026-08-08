@@ -1,0 +1,11 @@
+experiment: table7_phenotype_accuracy
+base_config: ../paper_defaults.yaml
+methods: [Raw-LiDAR, 3DGS, Deformable-GS, WB-3DGS]
+traits:
+  pseudostem_height: {unit: cm, n: 360, independent_unit: plant}
+  pseudostem_diameter: {unit: mm, n: 360, independent_unit: plant}
+  leaf_area: {unit: m2, n: 1080, nesting: 3_leaves_per_plant}
+metrics: [R2, RMSE, MAPE]
+manual_reference: mean_of_two_operators
+leaf_area_calibration_k: 0.825
+

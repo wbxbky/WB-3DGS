@@ -1,0 +1,9 @@
+experiment: table8_mesh_vs_meshfree
+base_config: ../paper_defaults.yaml
+reconstruction: same_WB3DGS_canonical_space_for_both_methods
+same_semantic_and_instance_assignments: true
+methods: [mesh_based, mesh_free]
+traits: [pseudostem_height, pseudostem_diameter, leaf_area]
+metrics: [R2, RMSE, MAPE, time_per_plant_s]
+population: {plants: 360, leaves: 1080}
+

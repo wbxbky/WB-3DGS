@@ -1,0 +1,7 @@
+experiment: supplementary_s8_l3_cluster_bootstrap
+base_config: ../paper_defaults.yaml
+wind_regime: L3
+methods: [3DGS, K-Planes, Deformable-GS, Spacetime-Gaussians, Dynamic-3D-Gaussians, 4DGS, WB-3DGS]
+metrics: [PSNR, SSIM, LPIPS]
+bootstrap: {unit: sequence, sequences: 6, resamples: 10000, seed: 42, ci_percent: 95, method: percentile}
+

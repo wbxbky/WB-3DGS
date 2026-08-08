@@ -1,0 +1,5 @@
+wind_regime,sequence_id,plant_id,manuscript_reference,expected_psnr_db,expected_ssim,expected_lpips,expected_symmetric_cd_cm,expected_leaf_area_ape_percent,release_status
+L1,Seq-02,Plant-15,"Fig. S1 / Table S7",30.81,0.913,0.095,1.06,4.2,TO_BE_PACKAGED
+L2,Seq-08,Plant-05,"Fig. S2 / Table S7",29.80,0.908,0.110,1.35,5.8,TO_BE_PACKAGED
+L3,Seq-14,Plant-18,"Fig. S3 / Table S7",29.15,0.905,0.121,1.82,7.5,TO_BE_PACKAGED
+

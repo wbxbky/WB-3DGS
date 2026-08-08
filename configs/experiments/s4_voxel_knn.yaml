@@ -1,0 +1,15 @@
+experiment: supplementary_s4_voxel_knn_sensitivity
+base_config: ../paper_defaults.yaml
+wind_regime: L1
+sequences: 6
+reference_setting: {voxel_m: 0.05, knn: 12}
+configurations:
+  - {voxel_m: 0.02, knn: 12}
+  - {voxel_m: 0.05, knn: 6}
+  - {voxel_m: 0.05, knn: 12}
+  - {voxel_m: 0.05, knn: 24}
+  - {voxel_m: 0.10, knn: 12}
+metrics: [symmetric_chamfer_cm, depth_mae_cm, completeness_at_5cm_percent, PSNR]
+evaluation_stage_voxel_m: 0.05
+note: "evaluation voxel is distinct from anchor-initialization voxel"
+

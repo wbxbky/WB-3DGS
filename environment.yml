@@ -1,0 +1,25 @@
+name: wb3dgs
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  # RELEASE_CANDIDATE ONLY: replace torch/CUDA pins with the exact historical
+  # versions from the original workstation before claiming exact reproduction.
+  - pytorch=2.1.2
+  - torchvision=0.16.2
+  - pytorch-cuda=11.8
+  - numpy=1.26.4
+  - scipy=1.11.4
+  - scikit-learn=1.3.2
+  - pandas=2.1.4
+  - pyyaml=6.0.1
+  - opencv=4.8.1
+  - pillow=10.2.0
+  - pip
+  - pip:
+      - lpips==0.1.4
+      - scikit-image==0.22.0
+      - plyfile==1.0.3
+

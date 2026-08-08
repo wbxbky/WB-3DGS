@@ -1,0 +1,20 @@
+experiment: tables4_5_leave_one_out_ablation
+base_config: ../paper_defaults.yaml
+variants:
+  - 3DGS
+  - w/o_LiDAR
+  - w/o_Hierarchical_Motion
+  - w/o_Semantic
+  - w/o_Physics
+  - Full_Model
+rendering:
+  wind_regime: L3
+  sequences: 6
+  metrics: [PSNR, SSIM, LPIPS, RAFT_warping_error]
+geometry:
+  wind_regime: L1
+  sequences: 6
+  metrics: [symmetric_chamfer_cm, depth_mae_cm, completeness_at_5cm_percent]
+same_split_and_schedule: true
+known_release_issue: "Verify Table 5 w/o Physics CD against Table 6 Base+LA+HM+SC before publication"
+

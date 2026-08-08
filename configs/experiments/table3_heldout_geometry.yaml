@@ -1,0 +1,14 @@
+experiment: table3_optimization_heldout_lidar
+base_config: ../paper_defaults.yaml
+wind_regimes: [L1, L2, L3]
+sequences_per_regime: 6
+reference: optimization_heldout_deskewed_lidar_sweep
+methods: [3DGS, Deformable-GS, Dynamic-3D-Gaussians, 4DGS, WB-3DGS]
+timestamp_definition: median_lidar_timestamp_within_plant_roi
+roi_m: [3, 3, 3]
+evaluation_voxel_m: 0.05
+distance_threshold_cm: 5
+metrics: [symmetric_chamfer_cm, depth_mae_cm, precision_at_5cm, recall_at_5cm, f1_at_5cm]
+posthoc_registration: false
+independent_unit: sequence
+
