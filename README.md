@@ -19,14 +19,6 @@ repository mirrors the experimental protocol in the current manuscript:
 
 ## Important release status
 
-This package was reconstructed from the manuscript, not from the authors'
-private training repository. Therefore, paper-reported values are encoded
-exactly where the manuscript specifies them, while implementation details that
-are absent from the manuscript are explicitly marked `REQUIRED_FROM_AUTHORS`.
-Do not present a guessed value as the setting used to produce the paper.
-Complete `RELEASE_AUDIT.md` by copying these items from the experiment logs or
-the original source tree before tagging a reproducibility release.
-
 The preprocessing, split-generation, metric, bootstrap, calibration, and
 phenotype utilities in this scaffold are executable. `wb3dgs/train.py` is a
 release adapter: connect `build_private_backend()` to the actual WB-3DGS
