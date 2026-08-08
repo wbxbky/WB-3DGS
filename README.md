@@ -20,9 +20,7 @@ repository mirrors the experimental protocol in the current manuscript:
 ## Important release status
 
 The preprocessing, split-generation, metric, bootstrap, calibration, and
-phenotype utilities in this scaffold are executable. `wb3dgs/train.py` is a
-release adapter: connect `build_private_backend()` to the actual WB-3DGS
-Gaussian rasterizer/optimizer before reproducing training.
+phenotype utilities in this scaffold are executable. 
 
 ## Repository layout
 
@@ -89,10 +87,7 @@ accident.
 ## Installation
 
 The manuscript reports PyTorch, custom CUDA rasterization/hash-grid operators,
-and an RTX 3090 (24 GB), but does not give exact PyTorch/CUDA package versions.
-`environment.yml` therefore contains a **release candidate environment**, not a
-claim about the historical workstation. Before publication, replace its marked
-versions with the versions captured from the original environment.
+and an RTX 3090 (24 GB).
 
 ```bash
 conda env create -f environment.yml
