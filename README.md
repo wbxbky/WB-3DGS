@@ -273,5 +273,4 @@ training sequence/plant, iteration, and license in `checkpoints/README.md`.
 
 ## Citation
 
-Update `CITATION.cff` with the final title, DOI, author list, and publication
-year after acceptance.
+
